@@ -1,0 +1,16 @@
+org\prokarma\web\demo\test\CustomerInfo.class
+org\prokarma\web\demo\test\DealerInfo.class
+org\prokarma\web\demo\pages\common\AMPInputHTMLPage.class
+org\prokarma\web\demo\pages\common\ServicePlanPage.class
+org\prokarma\web\demo\test\UserCredentials.class
+org\prokarma\web\demo\pages\common\NavigationPage.class
+org\prokarma\web\demo\test\AMPTestData.class
+org\prokarma\web\demo\pages\common\PaymentInfoPage.class
+com\prokarma\web\demo\jaxws\JaxWSTest.class
+org\prokarma\web\demo\api\APITest.class
+org\prokarma\web\demo\pages\common\DealerInfoPage.class
+org\prokarma\web\demo\api\CertificateConfig.class
+org\prokarma\web\demo\pages\common\LoginInPage.class
+org\prokarma\web\demo\test\ServicePlanInfo.class
+org\prokarma\web\demo\pages\common\CustomerInfoPage.class
+org\prokarma\web\demo\test\AMPOrderProcess.class

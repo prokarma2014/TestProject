@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Test-class Suite" >
+	<parameter name="config-file" value="amptest.properties"/>
+	<test name="webtests" >
+		<parameter name="platform-type" value="firefox" />
+		<!-- <classes>
+			<class name="org.prokarma.web.demo.test.AMPOrderProcess" />
+		</classes> -->
+	</test>
+		<test name="apitests">
+		<classes>
+			<!-- <class name="org.prokarma.web.demo.api.APITest"/>	 -->
+			<class name="com.prokarma.web.demo.jaxws.JaxWSTest" />
+		</classes> 
+	</test> 
+</suite>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Test-class Suite" duration-ms="2195" started-at="2015-12-16T18:52:38Z" finished-at="2015-12-16T18:52:40Z">
+    <groups>
+    </groups>
+    <test name="webtests" duration-ms="2" started-at="2015-12-16T18:52:38Z" finished-at="2015-12-16T18:52:38Z">
+    </test> <!-- webtests -->
+    <test name="apitests" duration-ms="2151" started-at="2015-12-16T18:52:38Z" finished-at="2015-12-16T18:52:40Z">
+      <class name="com.prokarma.web.demo.jaxws.JaxWSTest">
+        <test-method status="PASS" signature="initializeConfig(java.lang.String)[pri:0, instance:com.prokarma.web.demo.jaxws.JaxWSTest@ef9176]" name="initializeConfig" is-config="true" duration-ms="305" started-at="2015-12-16T13:52:38Z" finished-at="2015-12-16T13:52:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[amptest.properties]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeConfig -->
+        <test-method status="PASS" signature="initializeTest(org.testng.ITestContext)[pri:0, instance:com.prokarma.web.demo.jaxws.JaxWSTest@ef9176]" name="initializeTest" is-config="true" duration-ms="0" started-at="2015-12-16T13:52:38Z" finished-at="2015-12-16T13:52:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@34ace1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeTest -->
+        <test-method status="PASS" signature="testJAXWSService(com.vzt.framework.core.api.JAXWSRequestTestData)[pri:0, instance:com.prokarma.web.demo.jaxws.JaxWSTest@ef9176]" name="testJAXWSService" duration-ms="2128" started-at="2015-12-16T13:52:38Z" data-provider="default" finished-at="2015-12-16T13:52:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[JAXWSRequestTestData [envelope=<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sec="http://ns.hughestelematics.com/v2.0/service/securityServiceMethodV2_1" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/Security/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sec:AuthenticateV2>
+         <!--Optional:-->
+         <AuthenticateRequestTypeV2>
+            <v1:Header>
+               <v11:SourceName>WEB</v11:SourceName>
+               <!--Optional:-->
+               <v11:TargetName>TOS</v11:TargetName>
+               <v11:TransactionId>Vish27822300</v11:TransactionId>
+               <v11:Timestamp>2015-03-12T13:03:35.432Z</v11:Timestamp>
+               <v11:Organization>VW</v11:Organization>
+               <v11:Region>US</v11:Region>
+               <v11:ApplicationName>CWP</v11:ApplicationName>
+            </v1:Header>
+            <v1:DataArea>
+               <v1:UserId>29814908</v1:UserId>
+               <v1:PIN>6161</v1:PIN>
+               <v1:Type>primary</v1:Type>
+               <!--Optional:-->
+               <v1:ExternalUserName>adesu</v1:ExternalUserName>
+               <!--Optional:-->
+               <v1:ExternalUserId>adesu</v1:ExternalUserId>
+               <!--Optional:-->
+               <v1:Email>bhanoday.saranam@hughestelematics.com</v1:Email>
+               <!--Optional:-->
+               <v1:HTDID>?</v1:HTDID>
+               <!--Optional:-->
+               <v1:Version>?</v1:Version>
+            </v1:DataArea>
+         </AuthenticateRequestTypeV2>
+      </sec:AuthenticateV2>
+   </soapenv:Body>
+</soapenv:Envelope>, tcid=TC_001, api_Name=FAL – Authenticate, auth_Service=No, run_Mode=YES, baseURL=http://miawsbap01s.vtitel.net:8080, api=/HTIWebGateway/EnterpriseGatewayServices/SecurityServiceV2_1, contentType=text/xml;charset=UTF-8, header_Value=AuthenticateV2, header_Key=SOAPAction, expected_Response_Code=200, respone=OK]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testJAXWSService -->
+        <test-method status="PASS" signature="updateResultsInALM(org.testng.ITestResult)[pri:0, instance:com.prokarma.web.demo.jaxws.JaxWSTest@ef9176]" name="updateResultsInALM" is-config="true" duration-ms="0" started-at="2015-12-16T13:52:40Z" finished-at="2015-12-16T13:52:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testJAXWSService status=SUCCESS method=JaxWSTest.testJAXWSService(com.vzt.framework.core.api.JAXWSRequestTestData)[pri:0, instance:com.prokarma.web.demo.jaxws.JaxWSTest@ef9176] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateResultsInALM -->
+      </class> <!-- com.prokarma.web.demo.jaxws.JaxWSTest -->
+    </test> <!-- apitests -->
+  </suite> <!-- Test-class Suite -->
+</testng-results>
