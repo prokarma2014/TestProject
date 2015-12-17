@@ -76,8 +76,10 @@ public class JaxWSTest extends BaseTest<Object> {
 
 	private void updateALM(String testCaseName, String testCaseStatus) {
 
-		String TEST_SET_FOLDER_NAME = "TestSet_Demo";
-		String TEST_SET_NAME = "JaxWSTest";
+		String TEST_SET_FOLDER_NAME = "TestSet123";
+		String TEST_SET_NAME = "JaxWSTest123";
+		String TEST_CASE_NAME = "verifyJAXWSService";
+
 		String TEST_STATUS = "Failed";
 
 		System.out.println("Test Case Status: " + testCaseStatus);
@@ -154,12 +156,12 @@ public class JaxWSTest extends BaseTest<Object> {
 			}
 		}
 
-		allEntities = testService.getEntityByName("tests", testCaseName);
+		allEntities = testService.getEntityByName("tests", TEST_CASE_NAME);
 		if (!(allEntities.getTotalResults() == 0)) {
 			TEST_ID = EntityBeanUtils.getEntityIdWithName(allEntities,
 					testCaseName);
 		} else {
-			entity = testService.createEntity("tests", testCaseName,
+			entity = testService.createEntity("tests", TEST_CASE_NAME,
 					PARENT_ALM_TEST_FOLDER_ID, null, null);
 			TEST_ID = EntityBeanUtils.getEntityId(entity);
 		}
