@@ -78,7 +78,7 @@ public class JaxWSTest extends BaseTest<Object> {
 
 		String TEST_SET_FOLDER_NAME = "TestSet123";
 		String TEST_SET_NAME = "JaxWSTest123";
-		String TEST_CASE_NAME = "verifyJAXWSService";
+		String TEST_CASE_NAME = "verifyJAXWSServiceDemo";
 
 		String TEST_STATUS = "Failed";
 
