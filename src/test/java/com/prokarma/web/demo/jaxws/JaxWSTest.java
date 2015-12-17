@@ -131,6 +131,9 @@ public class JaxWSTest extends BaseTest<Object> {
 			allDefaultTestFolders.add(defaultTestFolder);
 		}
 
+		System.out.println("-----testFolderPath -------" +testFolderPath  );
+
+
 		PARENT_ALM_TEST_FOLDER_NAME = Constants.ROOT_ALM_TEST_FOLDER_NAME;
 		allEntities = testFolderService.getListOfEntities("test-folders",
 				PARENT_ALM_TEST_FOLDER_ID);
@@ -166,6 +169,7 @@ public class JaxWSTest extends BaseTest<Object> {
 			TEST_ID = EntityBeanUtils.getEntityId(entity);
 		}
 
+		System.out.println("-----testFolderPath ------- 1 " );
 		allEntities = testSetFolderService.getEntityByName("test-set-folders",
 				TEST_SET_FOLDER_NAME);
 		if (!(allEntities.getTotalResults() == 0)) {
@@ -178,6 +182,9 @@ public class JaxWSTest extends BaseTest<Object> {
 
 		}
 
+
+		System.out.println("-----testFolderPath ------- 2 " );
+
 		allEntities = testSetService.getListOfEntities("test-sets",
 				PARENT_ALM_TESTSET_FOLDER_ID);
 		if (!(allEntities.getTotalResults() == 0)) {
@@ -188,6 +195,9 @@ public class JaxWSTest extends BaseTest<Object> {
 					PARENT_ALM_TESTSET_FOLDER_ID, null, null);
 			TEST_SET_ID = EntityBeanUtils.getEntityId(entity);
 		}
+
+
+		System.out.println("-----TEST_SET_ID ------- 1 " + TEST_SET_ID  );
 
 		// TEST_SET_ID = EntityBeanUtils.getEntityId(entity);
 		// entity = testInstanceService.createTestInstance(null, "29593",
@@ -201,6 +211,8 @@ public class JaxWSTest extends BaseTest<Object> {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
+		System.out.println("-----loaded------- 1 " );
 
 		allEntities = testInstanceService
 				.getTestInstancesByTestSetId(TEST_SET_ID);
@@ -219,8 +231,12 @@ public class JaxWSTest extends BaseTest<Object> {
 			testInstanceService.updateTestInstance(TEST_INSTANCE_ID,
 					TEST_STATUS);
 		}
+		
+		System.out.println("------------ success "   );
 
 		myConfigProperties.setProperty("0", "status," + "No Run");
+
+		System.out.println("------------ fine"   );
 	}
 
 	@Override
