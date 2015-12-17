@@ -1,4 +1,15 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.257 sec - in TestSuite
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 3.513 sec <<< FAILURE! - in TestSuite
+updateResultsInALM(com.prokarma.web.demo.jaxws.JaxWSTest)  Time elapsed: 2.187 sec  <<< FAILURE!
+java.lang.ExceptionInInitializerError: null
+	at java.util.Properties$LineReader.readLine(Properties.java:434)
+	at java.util.Properties.load0(Properties.java:353)
+	at java.util.Properties.load(Properties.java:341)
+	at com.vzt.framework.hpqc.utils.PropertyUtils.<init>(PropertyUtils.java:25)
+	at com.vzt.framework.hpqc.utils.PropertyUtils.getInstance(PropertyUtils.java:34)
+	at com.vzt.framework.hpqc.utils.Constants.<clinit>(Constants.java:10)
+	at com.prokarma.web.demo.jaxws.JaxWSTest.updateALM(JaxWSTest.java:109)
+	at com.prokarma.web.demo.jaxws.JaxWSTest.updateResultsInALM(JaxWSTest.java:73)
+

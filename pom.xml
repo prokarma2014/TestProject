@@ -26,12 +26,12 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
-					<systemProperties>
-						<!-- <property>
+					<!-- <systemProperties>
+						<property>
 							<name>webdriver.ie.driver</name>
 							<value>D:/POC_softwares/IEDriverServer_Win32_2.48.0/IEDriverServer.exe</value>
-						</property> -->
-					</systemProperties>
+						</property>
+					</systemProperties> -->
 				</configuration>
 			</plugin>
 		</plugins>
