@@ -76,9 +76,9 @@ public class JaxWSTest extends BaseTest<Object> {
 
 	private void updateALM(String testCaseName, String testCaseStatus) {
 
-		String TEST_SET_FOLDER_NAME = "TestSet123";
-		String TEST_SET_NAME = "JaxWSTest123";
-		String TEST_CASE_NAME = "verifyJAXWSServiceDemo";
+		String TEST_SET_FOLDER_NAME = "TestSet123Demo";
+		String TEST_SET_NAME = "JaxWSTest123Demo";
+		String TEST_CASE_NAME = "verifyJAXWSServiceDemoTest";
 
 		String TEST_STATUS = "Failed";
 
