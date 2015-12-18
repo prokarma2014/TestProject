@@ -138,9 +138,12 @@ public class TestExecutionStatusReporter implements IReporter {
 	public void updateHPAlmWithSuccessStat(String testCaseName, String testCaseStatus) throws Exception {
 		System.out.println("HPAlm Update for " + testCaseName + " --->  " + testCaseStatus);
 
-		String TEST_SET_FOLDER_NAME = "FAL-Sprint4";
-		String TEST_SET_NAME = "FAL-Sprint4";
-		String TEST_CASE_NAME = "TestA4"+testCaseName;
+		int randomPIN = (int)(Math.random()*9000)+1000;
+		String pin = String.valueOf(randomPIN);
+
+		String TEST_SET_FOLDER_NAME = "FAL-Sprint12";
+		String TEST_SET_NAME = "FAL-Sprint12";
+		String TEST_CASE_NAME = "TestCase"+ pin + "-" + testCaseName;
 		
 		updateALM(testCaseName, testCaseStatus, TEST_SET_FOLDER_NAME, TEST_SET_NAME,  TEST_CASE_NAME);
 	}
