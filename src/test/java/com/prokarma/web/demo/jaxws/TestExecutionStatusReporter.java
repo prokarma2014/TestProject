@@ -94,7 +94,7 @@ public class TestExecutionStatusReporter implements IReporter {
 			if (testStat.equalsIgnoreCase("FAIL")) {
 				//System.out.println(result.toString());
 				
-				updateHPAlmWithSuccessStat(result.getMethod().getMethodName(), testStat);
+				updateHPAlmWithSuccessStat(result.getMethod().getMethodName(), String.valueOf(result.getStatus()));
 				
 				Throwable t = result.getThrowable();
 				if (t != null) {
@@ -115,13 +115,13 @@ public class TestExecutionStatusReporter implements IReporter {
 			else if (testStat.equalsIgnoreCase("pass")) {
 				
 				//System.out.println(result.getTestName());
-				updateHPAlmWithSuccessStat(result.getMethod().getMethodName(),testStat );
+				updateHPAlmWithSuccessStat(result.getMethod().getMethodName(), String.valueOf(result.getStatus()) );
 			/**/
 			}
 			else {			
 				
 				//System.out.println(result.getTestName());
-				updateHPAlmWithSuccessStat(result.getMethod().getMethodName(),testStat );
+				updateHPAlmWithSuccessStat(result.getMethod().getMethodName(), String.valueOf(result.getStatus()) );
 			}
 			
 		
@@ -135,14 +135,14 @@ public class TestExecutionStatusReporter implements IReporter {
 	 * @param testStat
 	 * @throws Exception
 	 */
-	public void updateHPAlmWithSuccessStat(String testCaseName, String testStat) throws Exception {
-		System.out.println("HPAlm Update for " + testCaseName + " --->  " + testStat);
+	public void updateHPAlmWithSuccessStat(String testCaseName, String testCaseStatus) throws Exception {
+		System.out.println("HPAlm Update for " + testCaseName + " --->  " + testCaseStatus);
 
-		String TEST_SET_FOLDER_NAME = "FAL-Sprint1";
-		String TEST_SET_NAME = "FAL-Sprint1";
-		String TEST_CASE_NAME = "Test"+testCaseName;
+		String TEST_SET_FOLDER_NAME = "FAL-Sprint4";
+		String TEST_SET_NAME = "FAL-Sprint4";
+		String TEST_CASE_NAME = "TestA4"+testCaseName;
 		
-		updateALM(testCaseName, testStat, TEST_SET_FOLDER_NAME, TEST_SET_NAME,  TEST_CASE_NAME);
+		updateALM(testCaseName, testCaseStatus, TEST_SET_FOLDER_NAME, TEST_SET_NAME,  TEST_CASE_NAME);
 	}
 
 	/**
@@ -170,17 +170,15 @@ public class TestExecutionStatusReporter implements IReporter {
 	}
 	
 	
-	private void updateALM(String testCaseName,String testStat,String TEST_SET_FOLDER_NAME,String TEST_SET_NAME,String  TEST_CASE_NAME) {
+	private void updateALM(String testCaseName,String testCaseStatus,String TEST_SET_FOLDER_NAME,String TEST_SET_NAME,String  TEST_CASE_NAME) {
 
 
-		String TEST_STATUS = testStat;
-				
-/*				"Failed";
+		String TEST_STATUS = "Failed";
 		System.out.println("Test Case Status: " + testCaseStatus);
 		if (testCaseStatus.equals("1")) {
 			TEST_STATUS = "Passed";
 		}
-*/
+
 		TestFolderEntityService testFolderService;
 		TestEntityService testService;
 		TestSetFolderEntityService testSetFolderService;
@@ -299,12 +297,18 @@ public class TestExecutionStatusReporter implements IReporter {
 		allEntities = testInstanceService
 				.getTestInstancesByTestSetId(TEST_SET_ID);
 		if (!(allEntities.getTotalResults() == 0)) {
-			List<String> entityIds = EntityBeanUtils.getEntityIds(allEntities);
+			entity = testInstanceService.createTestInstance(null, TEST_SET_ID,
+					TEST_ID, null);
+			TEST_INSTANCE_ID = EntityBeanUtils.getEntityId(entity);
+			myConfigProperties.setProperty("0", "status," + TEST_STATUS);
+			testInstanceService.updateTestInstance(TEST_INSTANCE_ID,
+					TEST_STATUS);
+			/*List<String> entityIds = EntityBeanUtils.getEntityIds(allEntities);
 			for (String testInstanceId : entityIds) {
 				myConfigProperties.setProperty("0", "status," + TEST_STATUS);
 				testInstanceService.updateTestInstance(testInstanceId,
 						TEST_STATUS);
-			}
+			}*/
 		} else {
 			entity = testInstanceService.createTestInstance(null, TEST_SET_ID,
 					TEST_ID, null);
