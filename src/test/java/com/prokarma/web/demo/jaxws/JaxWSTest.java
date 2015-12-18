@@ -2,17 +2,6 @@ package com.prokarma.web.demo.jaxws;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Properties;
-
-import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.jayway.restassured.response.Response;
@@ -20,52 +9,112 @@ import com.vzt.framework.core.BaseTest;
 import com.vzt.framework.core.api.JAXWSRequestTestData;
 import com.vzt.framework.core.api.factory.JAXWSTestFactory;
 import com.vzt.framework.core.testdrivers.DriverFactory;
-import com.vzt.framework.hpqc.entity.services.impl.TestEntityService;
-import com.vzt.framework.hpqc.entity.services.impl.TestFolderEntityService;
-import com.vzt.framework.hpqc.entity.services.impl.TestInstanceEntityService;
-import com.vzt.framework.hpqc.entity.services.impl.TestSetEntityService;
-import com.vzt.framework.hpqc.entity.services.impl.TestSetFolderEntityService;
-import com.vzt.framework.hpqc.model.alm.EntityBean;
-import com.vzt.framework.hpqc.model.alm.ListOfEntitiesBean;
-import com.vzt.framework.hpqc.utils.Constants;
-import com.vzt.framework.hpqc.utils.EntityBeanUtils;
 
 public class JaxWSTest extends BaseTest<Object> {
-
-	// @BeforeMethod
-	// public void addTestToALM() {
-	//
-	// createTestFolderInALM(testCaseName);
-	// }
+	
 
 	@Test(dataProvider = "default")
 	public void testJAXWSService(JAXWSRequestTestData jaxRestTestData)
 			throws Exception {
 
-		// System.out.println(jaxRestTestData.toString());
-
 		JAXWSTestFactory object = new JAXWSTestFactory();
 		if (jaxRestTestData.getRun_Mode() != null
 				&& jaxRestTestData.getRun_Mode().equalsIgnoreCase("YES")) {
-
 			object.initialize(jaxRestTestData);
 			Response response = object.getResponse();
-
 			if (response != null) {
 				// can do the assertion based on the result.
 				assertEquals(jaxRestTestData.getExpected_Response_Code(),
 						Integer.toString(response.getStatusCode()));
-
 				String resStr = object.validateResponse(response);
 				System.out.println("------------" + resStr
 						+ "===========================");
-			}
-
+				}
 		}
-
 	}
+	
+	@Test(dataProvider = "default")
+	public void getActiveVHRAlerts(JAXWSRequestTestData jaxRestTestData)
+			throws Exception {
 
-	@AfterMethod
+		JAXWSTestFactory object = new JAXWSTestFactory();
+		if (jaxRestTestData.getRun_Mode() != null
+				&& jaxRestTestData.getRun_Mode().equalsIgnoreCase("YES")) {
+			object.initialize(jaxRestTestData);
+			Response response = object.getResponse();
+			if (response != null) {
+				// can do the assertion based on the result.
+				assertEquals(jaxRestTestData.getExpected_Response_Code(),
+						Integer.toString(response.getStatusCode()));
+				String resStr = object.validateResponse(response);
+				System.out.println("------------" + resStr
+						+ "===========================");
+				}
+		}
+	}
+	
+	@Test(dataProvider = "default")
+	public void vehicleHealthReport(JAXWSRequestTestData jaxRestTestData)
+			throws Exception {
+
+		JAXWSTestFactory object = new JAXWSTestFactory();
+		if (jaxRestTestData.getRun_Mode() != null
+				&& jaxRestTestData.getRun_Mode().equalsIgnoreCase("YES")) {
+			object.initialize(jaxRestTestData);
+			Response response = object.getResponse();
+			if (response != null) {
+				// can do the assertion based on the result.
+				assertEquals(jaxRestTestData.getExpected_Response_Code(),
+						Integer.toString(response.getStatusCode()));
+				String resStr = object.validateResponse(response);
+				System.out.println("------------" + resStr
+						+ "===========================");
+				}
+		}
+	}
+	
+	@Test(dataProvider = "default")
+	public void getGeoFencing(JAXWSRequestTestData jaxRestTestData)
+			throws Exception {
+
+		JAXWSTestFactory object = new JAXWSTestFactory();
+		if (jaxRestTestData.getRun_Mode() != null
+				&& jaxRestTestData.getRun_Mode().equalsIgnoreCase("YES")) {
+			object.initialize(jaxRestTestData);
+			Response response = object.getResponse();
+			if (response != null) {
+				// can do the assertion based on the result.
+				assertEquals(jaxRestTestData.getExpected_Response_Code(),
+						Integer.toString(response.getStatusCode()));
+				String resStr = object.validateResponse(response);
+				System.out.println("------------" + resStr
+						+ "===========================");
+				}
+		}
+	}
+	
+	@Test(dataProvider = "default")
+	public void getGeoFenceRecords(JAXWSRequestTestData jaxRestTestData)
+			throws Exception {
+
+		JAXWSTestFactory object = new JAXWSTestFactory();
+		if (jaxRestTestData.getRun_Mode() != null
+				&& jaxRestTestData.getRun_Mode().equalsIgnoreCase("YES")) {
+			object.initialize(jaxRestTestData);
+			Response response = object.getResponse();
+			if (response != null) {
+				// can do the assertion based on the result.
+				assertEquals(jaxRestTestData.getExpected_Response_Code(),
+						Integer.toString(response.getStatusCode()));
+				String resStr = object.validateResponse(response);
+				System.out.println("------------" + resStr
+						+ "===========================");
+				}
+		}
+	}
+	
+
+	/*@AfterMethod
 	public void updateResultsInALM(ITestResult result) {
 		String testCaseName = result.getMethod().getMethodName();
 		String testCaseStatus = String.valueOf(result.getStatus());
@@ -76,9 +125,9 @@ public class JaxWSTest extends BaseTest<Object> {
 
 	private void updateALM(String testCaseName, String testCaseStatus) {
 
-		String TEST_SET_FOLDER_NAME = "TestSet123Demo";
-		String TEST_SET_NAME = "JaxWSTest123Demo";
-		String TEST_CASE_NAME = "verifyJAXWSServiceDemoTest";
+		String TEST_SET_FOLDER_NAME = "TestSet12355";
+		String TEST_SET_NAME = "JaxWSTest123";
+		String TEST_CASE_NAME = "verifyJAXWSService555";
 
 		String TEST_STATUS = "Failed";
 
@@ -131,9 +180,6 @@ public class JaxWSTest extends BaseTest<Object> {
 			allDefaultTestFolders.add(defaultTestFolder);
 		}
 
-		System.out.println("-----testFolderPath -------" +testFolderPath  );
-
-
 		PARENT_ALM_TEST_FOLDER_NAME = Constants.ROOT_ALM_TEST_FOLDER_NAME;
 		allEntities = testFolderService.getListOfEntities("test-folders",
 				PARENT_ALM_TEST_FOLDER_ID);
@@ -169,7 +215,6 @@ public class JaxWSTest extends BaseTest<Object> {
 			TEST_ID = EntityBeanUtils.getEntityId(entity);
 		}
 
-		System.out.println("-----testFolderPath ------- 1 " );
 		allEntities = testSetFolderService.getEntityByName("test-set-folders",
 				TEST_SET_FOLDER_NAME);
 		if (!(allEntities.getTotalResults() == 0)) {
@@ -182,9 +227,6 @@ public class JaxWSTest extends BaseTest<Object> {
 
 		}
 
-
-		System.out.println("-----testFolderPath ------- 2 " );
-
 		allEntities = testSetService.getListOfEntities("test-sets",
 				PARENT_ALM_TESTSET_FOLDER_ID);
 		if (!(allEntities.getTotalResults() == 0)) {
@@ -195,9 +237,6 @@ public class JaxWSTest extends BaseTest<Object> {
 					PARENT_ALM_TESTSET_FOLDER_ID, null, null);
 			TEST_SET_ID = EntityBeanUtils.getEntityId(entity);
 		}
-
-
-		System.out.println("-----TEST_SET_ID ------- 1 " + TEST_SET_ID  );
 
 		// TEST_SET_ID = EntityBeanUtils.getEntityId(entity);
 		// entity = testInstanceService.createTestInstance(null, "29593",
@@ -211,8 +250,6 @@ public class JaxWSTest extends BaseTest<Object> {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
-		System.out.println("-----loaded------- 1 " );
 
 		allEntities = testInstanceService
 				.getTestInstancesByTestSetId(TEST_SET_ID);
@@ -231,13 +268,9 @@ public class JaxWSTest extends BaseTest<Object> {
 			testInstanceService.updateTestInstance(TEST_INSTANCE_ID,
 					TEST_STATUS);
 		}
-		
-		System.out.println("------------ success "   );
 
 		myConfigProperties.setProperty("0", "status," + "No Run");
-
-		System.out.println("------------ fine"   );
-	}
+	}*/
 
 	@Override
 	protected DriverFactory<Object> initPrimaryDriverFactory() {

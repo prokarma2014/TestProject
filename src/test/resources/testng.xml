@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Test-class Suite" >
 	<parameter name="config-file" value="amptest.properties"/>
+<listeners>
+    <listener class-name="com.prokarma.web.demo.jaxws.TestExecutionStatusReporter" />
+  </listeners>	
 	<test name="webtests" >
 		<parameter name="platform-type" value="firefox" />
 		<!-- <classes>
